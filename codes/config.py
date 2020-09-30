@@ -17,8 +17,8 @@ class Config():
 
         # Training
         self.num_epoch = 300
-        self.batch_size = 16
-        self.batch_size_test = 16
+        self.batch_size = 8
+        self.batch_size_test = 8
         self.num_classes = 4
 
         # Word Embedding settings
@@ -34,7 +34,7 @@ class Config():
         self.include_key_structure = True
         self.include_val_structure = True
         # {0: max_pooling, 1: average_pooling, 2: max_pooling_w_attention, 3: average_pooling_w_attention, 4: attention}
-        self.word_module_version = 4
+        self.word_module_version = 2
         # {0: average_pooling, 1: condense_into_fix_vector, 2: first_vector, 3: attention}
         self.post_module_version = 3
 
@@ -50,15 +50,15 @@ class Config():
         # Word padding settings
         self.max_length = 35  # Pad the content to 35 words
         # Based on the data, 339 is the largest for twitter15 and 270 is the largest for twitter16
-        self.max_tweets = 339
+        self.max_tweets = 270
 
         # Data paths
         self.extension = "json"
-        self.data_set = "train_pheme_test_sg"
-        self.data_folder = "testing_pheme"
-        self.train_file_path = "train_w_structure.json"
-        self.test_1_file_path = "test_w_structure.json"
-        self.test_2_file_path = "test_w_structure_small.json"
+        self.data_set = "train_twitter16_test_sg"
+        self.data_folder = "testing_twitter16"
+        self.train_file_path = "train_unique_w_structure_v2.json"
+        self.test_1_file_path = "test_1_unique_w_structure_v2.json"
+        self.test_2_file_path = "test_2_unique_w_structure_v2.json"
 
         # JSON keys --> All the keys in the JSON need to be present
         self.keys_order = {"post_id": "id_", "label": "label", "content": "tweets",
